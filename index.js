@@ -4,6 +4,8 @@ const ytdl = require('ytdl-core');
 const puppeteer = require('puppeteer');
 const path = require('path');
 const app = express();
+const cors = require('cors');
+app.use(cors());
 
 app.use(express.json());
 
