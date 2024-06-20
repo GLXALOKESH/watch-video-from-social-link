@@ -13,7 +13,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/api/getVideoLink', async (req, res) => {
     const { url } = req.query;
 
+    console.log('Received video URL:', url);
+    
     let videoUrl;
+
     if (url.includes('youtube.com') || url.includes('youtu.be')) {
         videoUrl = await getYouTubeVideoUrl(url);
     } else if (url.includes('instagram.com')) {
