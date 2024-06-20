@@ -3,23 +3,24 @@ document.getElementById('video-form').addEventListener('submit', function(event)
 
     const videoLink = document.getElementById('videoLink').value;
 
-    fetch(`/api/getVideoLink?url=${encodeURIComponent(videoLink)}`)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
+    let res = fetch(`/api/getVideoLink?url=${encodeURIComponent(videoLink)}`)
+    console.log(res)
+        // .then(response => response.json())
+        // .then(data => {
+        //     console.log(data);
             
-            if (data.videoUrl) {
-                const videoPlayer = document.getElementById('videoPlayer');
-                const videoSource = document.getElementById('videoSource');
-                videoSource.src = data.videoUrl;
-                videoPlayer.load();
-                videoPlayer.play();
-            } else {
-                alert('Invalid video link or unsupported platform.');
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching video URL:', error);
-            alert('Error fetching video URL. Please try again.');
-        });
+        //     if (data.videoUrl) {
+        //         const videoPlayer = document.getElementById('videoPlayer');
+        //         const videoSource = document.getElementById('videoSource');
+        //         videoSource.src = data.videoUrl;
+        //         videoPlayer.load();
+        //         videoPlayer.play();
+        //     } else {
+        //         alert('Invalid video link or unsupported platform.');
+        //     }
+        // })
+        // .catch(error => {
+        //     console.error('Error fetching video URL:', error);
+        //     alert('Error fetching video URL. Please try again.');
+        // });
 });
