@@ -6,6 +6,8 @@ document.getElementById('video-form').addEventListener('submit', function(event)
     fetch(`/api/getVideoLink?url=${encodeURIComponent(videoLink)}`)
         .then(response => response.json())
         .then(data => {
+            console.log(data);
+            
             if (data.videoUrl) {
                 const videoPlayer = document.getElementById('videoPlayer');
                 const videoSource = document.getElementById('videoSource');
