@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Link Player</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.11.8/video-js.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Video Link Player</h1>
+        <form id="video-form">
+            <div class="form-group">
+                <label for="videoLink">Enter Video Link</label>
+                <input type="text" class="form-control" id="videoLink" placeholder="Enter video link from YouTube, Instagram, or Facebook">
+            </div>
+            <button type="submit" class="btn btn-primary">Watch Video</button>
+        </form>
+        <div class="mt-5">
+            <video id="videoPlayer" class="video-js vjs-default-skin" controls preload="auto" width="640" height="264">
+                <source id="videoSource" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.11.8/video.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
